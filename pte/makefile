@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -lm -pthread -Ofast -march=native -Wall -funroll-loops -Wno-unused-result -lgsl -lm -lgslcblas
 LFLAGS = -lgsl -lm -lgslcblas
-INCLUDES = -I/usr/local/include -I../eigen-3.2.9
+INCLUDES = -I/usr/local/include -I../eigen-3.3.4
 LIBS = -L/usr/local/lib
 
 

@@ -44,9 +44,9 @@ void *TrainModelThread(void *id)
 			if (alpha < starting_alpha * 0.0001) alpha = starting_alpha * 0.0001;
 		}
 
-		trainer_ww.train_sample(alpha, error_vec, func_rand_num, next_random);
+        // trainer_ww.train_sample(alpha, error_vec, func_rand_num, next_random);
 		trainer_dw.train_sample(alpha, error_vec, func_rand_num, next_random);
-		trainer_lw.train_sample(alpha, error_vec, func_rand_num, next_random);
+		// trainer_lw.train_sample(alpha, error_vec, func_rand_num, next_random);
 
 		edge_count += 3;
 	}
@@ -63,9 +63,9 @@ void TrainModel() {
 	words.init(words_file, vector_size);
 	text_hin.init(hin_file, &nodes, &words);
 
-	trainer_ww.init('w', &text_hin, negative);
+	// trainer_ww.init('w', &text_hin, negative);
 	trainer_dw.init('d', &text_hin, negative);
-	trainer_lw.init('l', &text_hin, negative);
+	// trainer_lw.init('l', &text_hin, negative);
 
 	clock_t start = clock();
 	printf("Training process:\n");
