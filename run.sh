@@ -16,7 +16,8 @@ min_count=0 # discard words that appear less than <min_count>
 # cat ${output_path}words.node ${output_path}docs.node > ${output_path}text.node
 
 # learn predictive word representations
-./pte/pte -nodes ${output_path}text.node -words ${output_path}words.node -hin ${output_path}text.hin -output ${output_path}word.emb -binary 1 -size 100 -negative 5 -samples 300 -threads 20
+./pte/pte -nodes ${output_path}pu.node -words ${output_path}user.node -hin ${output_path}pu.hin -output ${output_path}output.emb -binary 0 -size 100 -negative 5 -samples 50000 -threads 4
+# ./pte/pte -nodes ${output_path}text.node -words ${output_path}words.node -hin ${output_path}text.hin -output ${output_path}word.emb -binary 1 -size 100 -negative 5 -samples 300 -threads 20
 
 # infer the embeddings of the texts provided in the <infer_file>
 # ./text2vec/infer -infer ${infer_file} -vector ${output_path}word.emb -output ${output_path}text.emb -debug 2 -binary 0

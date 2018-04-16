@@ -7,7 +7,7 @@
 #include <gsl/gsl_rng.h>
 #include "linelib.h"
 
-char nodes_file[MAX_STRING], words_file[MAX_STRING], hin_file[MAX_STRING], output_file[MAX_STRING];
+char nodes_file[MAX_STRING], words_file[MAX_STRING], hin_file[MAX_STRING], output_file[MAX_STRING];//, output_file2[MAX_STRING];
 int binary = 0, num_threads = 1, vector_size = 100, negative = 5;
 long long samples = 1, edge_count_actual;
 real alpha = 0.025, starting_alpha;
@@ -75,7 +75,8 @@ void TrainModel() {
 	clock_t finish = clock();
 	printf("Total time: %lf\n", (double)(finish - start) / CLOCKS_PER_SEC);
 
-	words.output(output_file, binary);
+	//words.output(output_file, binary);
+    nodes.output(output_file, binary);
 }
 
 int ArgPos(char *str, int argc, char **argv) {
@@ -121,10 +122,12 @@ int main(int argc, char **argv) {
 		return 0;
 	}
 	output_file[0] = 0;
+	//output_file2[0] = 0;
 	if ((i = ArgPos((char *)"-nodes", argc, argv)) > 0) strcpy(nodes_file, argv[i + 1]);
 	if ((i = ArgPos((char *)"-words", argc, argv)) > 0) strcpy(words_file, argv[i + 1]);
 	if ((i = ArgPos((char *)"-hin", argc, argv)) > 0) strcpy(hin_file, argv[i + 1]);
 	if ((i = ArgPos((char *)"-output", argc, argv)) > 0) strcpy(output_file, argv[i + 1]);
+	//if ((i = ArgPos((char *)"-outpu2", argc, argv)) > 0) strcpy(output_file2, argv[i + 1]);
 	if ((i = ArgPos((char *)"-binary", argc, argv)) > 0) binary = atoi(argv[i + 1]);
 	if ((i = ArgPos((char *)"-size", argc, argv)) > 0) vector_size = atoi(argv[i + 1]);
 	if ((i = ArgPos((char *)"-negative", argc, argv)) > 0) negative = atoi(argv[i + 1]);
