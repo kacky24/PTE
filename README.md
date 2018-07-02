@@ -20,7 +20,7 @@ After installing the two packages and modifying the package paths, users may use
 - user.node
 ：userノードのみを順番に並べる([sample](https://github.com/kacky24/bipartite_network_embedding/blob/master/workspace/user_sample.node))
 - cu.hin
-：content user 1 d と並べる([sample](https://github.com/kacky24/bipartite_network_embedding/blob/master/workspace/cu.hin))
+：content user 1 d と並べる([sample](https://github.com/kacky24/bipartite_network_embedding/blob/master/workspace/cu_sample.hin))
 
 ## Running
 To run the model, users may directly use the example script (run.sh) we provide.
