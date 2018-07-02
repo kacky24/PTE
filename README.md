@@ -18,29 +18,13 @@ The [GSL](https://www.gnu.org/software/gsl/) package is used to generate random 
 After installing the two packages and modifying the package paths, users may go to every folder and use the makefile to compile the codes.
 
 ## Data
-The PTE model uses a set of labeled texts for training, therefore users need to provide a text file and a label file, which contain the tokens and labels of the given texts respectively. For the text file, the i-th line contains the tokens of the i-th text, and the tokens are separated by spaces. For the label file, the number of lines is the same of the text file, and the i-th line records the label of the i-th text. We provide four examples in the data folder.
-
-After model training, users can use the learned word representations to infer the embeddings of other texts. To do that, users need to provide another text file, containing the tokens of the texts to infer. The file format is the same as the text file for modeling training, where each line contains a number of tokens separated by spaces. Users can also find several examples in the data folder.
+#### userとcontentの2部グラフの場合
+- cu.node
+2部グラフのノードを順番に並べる
+- user.node
+userノードのみを順番に並べる
+- cu.hin
+content user 1 d と並べる
 
 ## Running
 To run the PTE model, users may directly use the example script (run.sh) we provide. In this script, we will first construct the heterogeneous text networks based on the training files. Then we will call the PTE model to learn predictive word representations, which will be further used to infer the embeddings of other text data.
-
-## Contact: 
-If you have any questions about the codes and data, please feel free to contact us.
-```
-Meng Qu, qumn123@gmail.com
-Jian Tang, tangjianpku@gmail.com
-```
-
-## Citation
-```
-@inproceedings{tang2015pte,
-title={Pte: Predictive text embedding through large-scale heterogeneous text networks},
-author={Tang, Jian and Qu, Meng and Mei, Qiaozhu},
-booktitle={Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
-pages={1165--1174},
-year={2015},
-organization={ACM}
-}
-```
-

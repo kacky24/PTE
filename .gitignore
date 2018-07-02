@@ -5,4 +5,7 @@
 *.exe
 
 eigen*
-workspace
+workspace/*
+!cu_sample.node
+!cu_sample.hin
+!user.node
